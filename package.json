@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next --turbopack",
-    "build": "next build --turbopack && pagefind --site .next/server/app --output-path .next/static/_pagefind",
+    "build": "next build --turbopack && pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
     "lint": "eslint",
-    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind"
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
   },
   "dependencies": {
     "next": "15.5.4",
