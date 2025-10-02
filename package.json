@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build --turbopack && pagefind --site .next/server/app --output-path .next/static/_pagefind",
     "start": "next start",
     "lint": "eslint",
     "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind"
