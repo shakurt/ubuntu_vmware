@@ -1,8 +1,7 @@
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import { Banner, Head } from "nextra/components";
+import { Banner, Head, Search } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "nextra-theme-docs/style.css";
-import LinkedInProfile from "@/app/components/LinkedInProfile";
 
 export const metadata = {
   title: "Nextra Documentation",
@@ -12,17 +11,21 @@ const banner = <Banner storageKey="some-new">Nextra 4.0 is released 🎉</Banner
 const navbar = (
   <Navbar
     logo={<b>ThePrimeShak</b>}
-    projectLink="https://github.com/shuding/nextra"
-    chatLink="discordapp.com/users/605522203580301312"
+    projectLink="https://github.com/shakurt"
+    chatLink="https://discordapp.com/users/605522203580301312"
   />
 );
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+
+const search = <Search placeholder="Search docs..." />;
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pageMap = await getPageMap();
+
   return (
     <html
       // Not required, but good for SEO
@@ -42,9 +45,11 @@ export default async function RootLayout({
           banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/shakurt/ubuntu_vmware"
           footer={footer}
-          // ... Your additional layout options
+          search={search}
+          editLink={null}
+          feedback={{ content: null }}
         >
           {children}
         </Layout>
