@@ -1,0 +1,106 @@
+# Documentation
+
+Welcome to the documentation for Ubuntu VMware setup.
+
+## Getting Started
+
+This guide will help you set up Ubuntu in VMware Workstation.
+
+### Prerequisites
+
+Before you begin, make sure you have:
+
+- VMware Workstation Pro or Player installed
+- Ubuntu ISO file downloaded
+- At least 4GB of RAM available
+- 20GB of free disk space
+
+## Installation Steps
+
+### Step 1: Create a New Virtual Machine
+
+1. Open VMware Workstation
+2. Click **File** → **New Virtual Machine**
+3. Select **Typical** configuration
+4. Choose **Installer disc image file (iso)** and browse to your Ubuntu ISO
+
+### Step 2: Configure Virtual Machine Settings
+
+```bash
+# Recommended VM specifications
+RAM: 4GB (4096 MB)
+Disk Space: 20GB
+Processors: 2 cores
+```
+
+### Step 3: Install Ubuntu
+
+> **Note**: The installation process may take 15-30 minutes depending on your system specifications.
+
+Follow the Ubuntu installer prompts:
+
+- Select your language
+- Choose installation type
+- Create user account
+- Wait for installation to complete
+
+## Post-Installation
+
+After Ubuntu is installed, you should:
+
+1. **Install VMware Tools** for better performance
+2. **Update the system**:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+3. **Install essential packages**:
+   ```bash
+   sudo apt install curl wget git vim -y
+   ```
+
+## Troubleshooting
+
+### Common Issues
+
+| Problem          | Solution                       |
+| ---------------- | ------------------------------ |
+| Slow performance | Increase RAM allocation        |
+| Display issues   | Install VMware Tools           |
+| Network problems | Check network adapter settings |
+
+### VMware Tools Installation
+
+If VMware Tools aren't automatically installed:
+
+```bash
+# Mount the VMware Tools CD
+sudo mkdir /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+
+# Extract and install
+tar xzf /mnt/cdrom/VMwareTools-*.tar.gz
+cd vmware-tools-distrib
+sudo ./vmware-install.pl
+```
+
+## Advanced Configuration
+
+### Enable Shared Folders
+
+1. In VMware, go to **VM** → **Settings**
+2. Select **Options** tab → **Shared Folders**
+3. Enable shared folders and add your desired directories
+
+### Network Configuration
+
+For development work, you might want to configure network settings:
+
+- **NAT**: For internet access through host
+- **Bridged**: For direct network access
+- **Host-only**: For isolated network with host communication
+
+## Conclusion
+
+Your Ubuntu VMware setup is now complete! You can now start using Ubuntu for development, testing, or learning purposes.
+
+For more advanced topics, check out the [VMware documentation](https://docs.vmware.com/) and [Ubuntu documentation](https://ubuntu.com/server/docs).
