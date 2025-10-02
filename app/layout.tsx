@@ -17,24 +17,17 @@ const navbar = (
 );
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
 
-const search = <Search placeholder="Search docs..." />;
+const search = (
+  <Search placeholder="Search docs..." emptyResult="No Result Found." />
+);
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pageMap = await getPageMap();
-
   return (
-    <html
-      // Not required, but good for SEO
-      lang="en"
-      // Required to be set
-      dir="ltr"
-      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-      suppressHydrationWarning
-    >
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head
       // ... Your additional head options
       >
