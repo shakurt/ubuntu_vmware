@@ -43,6 +43,8 @@ export default async function RootLayout({
           search={search}
           editLink={null}
           feedback={{ content: null }}
+          toc={{ extraContent: null }}
+          copyPageButton={false}
         >
           {children}
         </Layout>

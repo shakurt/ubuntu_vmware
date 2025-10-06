@@ -1,7 +1,7 @@
 import nextra from "nextra";
 
 const withNextra = nextra({
-  defaultShowCopyCode: true,
+  defaultShowCopyCode: false,
 });
 
 export default withNextra({
