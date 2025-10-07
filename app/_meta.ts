@@ -25,17 +25,13 @@ const config: MetaRecord = {
     },
   },
 
-  "virtual-machine-vmware": {
-    title: "Virtual Machine & VMware 🖥️",
+  "virtual-machine": {
+    title: "Virtual Machine 💽",
     theme: {
       breadcrumb: false,
       copyPage: false,
     },
   },
-
-  // "virtual-machine-vmware": {
-  //   title: "Virtual Machine & VMware 🖥️",
-  // },
 
   "basic-terminal-commands": {
     title: "Basic Terminal Commands ⌨️",
