@@ -1,0 +1,129 @@
+# ⚙️ Ubuntu: Installation Configuration
+
+This short guide describes the on-screen configuration steps inside the Ubuntu Desktop installer (runs inside the VM).  
+Follow the steps in order — each line is a single user action in the installer UI.
+
+---
+
+## Step 1 — Select system language
+
+- Choose **English** (or your preferred English variant) on the first installer screen.
+- Click **Continue**.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step1.png)
+
+## Step 2 — Accessibility
+
+- On the accessibility screen, click **Next** (or **Continue**) to proceed (no mandatory changes required for lab use).
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step2.png)
+
+## Step 3 — Keyboard layout
+
+- Select **English (US)** or the appropriate English keyboard layout.
+- Click **Continue**.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step3.png)
+
+## Step 4 — Network (Use wired connection)
+
+- If possible, ensure the VM has a wired (Ethernet) connection enabled in VMware (NAT is fine).
+- The installer will auto-detect a wired connection; if detected, it will show as connected.
+- If no wired network is available, you may continue offline and configure networking later.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step4.png)
+
+## Step 5 — Choose installation mode
+
+- Click **Install Ubuntu** to start the installation process (not "Try Ubuntu").
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step5.png)
+
+## Step 6 — Installation type (interactive / selection)
+
+- Choose **Normal installation** (interactive / default).
+  - _This installs the standard desktop with common utilities and tools._
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step6.png)
+
+## Step 7 — Keep default selections where appropriate
+
+- On the same screen, leave default selections unless you have a specific reason to change them.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step7.png)
+
+## Step 8 — Download & third-party options (two checkboxes)
+
+- **Check** the boxes (if you want):
+  - **Download updates while installing Ubuntu**
+  - **Install third-party software for graphics and Wi-Fi hardware and additional media formats**
+- These are optional: checking them downloads drivers/codecs during install (recommended if you have internet).
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step8.png)
+
+## Step 9 — Installation type: disk choice
+
+- Select **Erase disk and install Ubuntu** (this only affects the VM's virtual disk).
+- Click **Install Now**, then **Continue** to confirm write changes.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step9.png)
+
+## Step 10 — Enter user information and password
+
+- When prompted, enter:
+  - **Your name (Full name)**
+  - **Computer name** (optional, default is fine)
+  - **Username** (e.g., `student`)
+  - **Password** (and confirm)
+- Choose whether to require your password to log in or to log in automatically.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step10.png)
+
+## Step 11 — Select location / timezone
+
+- Choose your **region / city** for the correct timezone.
+- Click **Continue**.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step11.png)
+
+## Step 12 — Start installation
+
+- After confirming options, click **Install** to begin copying files and configuring the system.
+- Wait for the installation progress to finish (this may take several minutes).
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step12.png)
+
+---
+
+## Step 13 — Restart the VM
+
+- When the installer finishes, click **Restart Now**.
+- The VM will reboot.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step13.png)
+
+---
+
+## Step 14 — If prompted about installation media
+
+- If you see **"Please remove the installation medium and press ENTER"**, either eject the ISO from VMware or simply press **Enter** / click **Skip Now** (if the VM UI shows that) so the VM boots into the installed system instead of the installer again.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step14.png)
+
+---
+
+## Step 15 — First-run: telemetry / system data prompt
+
+- On first login the Welcome dialog may ask: **"Help improve Ubuntu"** (send system info).
+- For privacy in a lab environment, choose **No / Don't share system data** (or the option labelled **"No, don't send system info"**).
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step15.png)
+
+---
+
+## Step 16 — Finish
+
+- Complete any final first-run dialogs and click **Finish** / **Done**.
+- You should now be at the Ubuntu desktop and can open the terminal (`Ctrl + Alt + T`) to begin working.
+
+## ![VMware Installer Screenshot](/images/ubuntu/vmware/step16.png)

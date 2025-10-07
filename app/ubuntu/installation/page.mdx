@@ -1,0 +1,111 @@
+# 🐧 Installing Ubuntu on VMware
+
+This page follows the exact sequence provided. Each step is written for **Windows + VMware Workstation** and is intended to be used as a guide during the lab.
+
+---
+
+## Step 1 — Download the Ubuntu ISO
+
+- Visit the official Ubuntu Desktop download page:  
+  🔗 https://ubuntu.com/download/desktop
+- Choose the **LTS (Long Term Support)** desktop release (recommended for labs).
+- Download the `.iso` file (for example: `ubuntu-24.04-desktop-amd64.iso`).
+
+> **Tip:** Keep the downloaded `.iso` in an easy-to-find folder (e.g., `Downloads\isos\`) so you can browse to it during VM creation.
+
+---
+
+## Step 2 — Create a New Virtual Machine
+
+1. Open **VMware Workstation Pro**.
+2. From the menu, select **File → New Virtual Machine**.
+3. Choose **Typical (recommended)** and click **Next**.
+   - (This option uses the guided wizard and is the fastest way for typical lab setups.)
+
+## ![VMware Installer Screenshot](/images/ubuntu/step1.png)
+
+## Step 3 — Select the Installer ISO and Continue
+
+1. On the _Installer Options_ screen choose **Installer disc image file (iso)**.
+2. Click **Browse…** and select the Ubuntu `.iso` you downloaded in Step 1.
+3. VMware may detect the guest OS (e.g., “Ubuntu 24.04”). Confirm the detected OS and click **Next**.
+
+> **Note:** VMware may show an **"Easy Install" / "Personalize Linux"** step after selecting the ISO — this is optional and related to Step 5 below.
+
+## ![VMware Installer Screenshot](/images/ubuntu/step2.png)
+
+## ![VMware Installer Screenshot](/images/ubuntu/step3.png)
+
+---
+
+## Step 4 — (If prompted) Enter User Info — Full name / Username / Password
+
+- If VMware shows fields for **Full name**, **Username**, and **Password** at this point, you can fill them to allow VMware to automate parts of the installation.
+  - Example values:
+    - Full name: `Student Name`
+    - Username: `student`
+    - Password: `your_password_here`
+
+## ![VMware Installer Screenshot](/images/ubuntu/step4.png)
+
+---
+
+## Step 5 — Choose VM Name and Storage Location
+
+1. Set a **Name** for your virtual machine (e.g., `Ubuntu-Lab`).
+2. Choose a **location** on your host disk where VM files will be stored.
+   - Recommendation: use your main internal drive (SSD if available) for better performance.
+3. Click **Next**.
+
+> **Tip:** Keep the VM path short and on a drive with enough free space (e.g., `C:\VMs\Ubuntu-Lab\`).
+
+## ![VMware Installer Screenshot](/images/ubuntu/step5.png)
+
+---
+
+## Step 6 — Virtual Disk Size and File Options
+
+1. Set the **Maximum disk size** (suggested: **20 GB** or more).
+2. Choose whether to **Store virtual disk as a single file** or **Split virtual disk into multiple files**.
+3. Click **Next**.
+
+**Recommended settings for this lab:**
+
+- Disk size: `20 GB`
+- Store as: **single file** (unless you need portability to FAT32/external drives)
+
+## ![VMware Installer Screenshot](/images/ubuntu/step6.png)
+
+---
+
+## Step 7 — Finalize and Hardware Customization (optional)
+
+1. Click **Customize Hardware...** if you want to adjust resources before finishing:
+   - **Memory (RAM):** set to at least **2048 MB (2 GB)**; **4096 MB (4 GB)** recommended if your host has enough RAM.
+   - **Processors:** set to **1 or 2** virtual cores depending on host availability.
+   - **Network Adapter:** choose **NAT** (recommended for easy internet access) or **Bridged** (if you need VM on the same LAN as host).
+   - **Display / Graphics:** enable 3D acceleration if you need better GUI performance (optional).
+2. Click **Close** when done customizing.
+
+## ![VMware Installer Screenshot](/images/ubuntu/step7.png)
+
+---
+
+## Step 8 — Power On and Finish
+
+1. Click **Finish** in the New Virtual Machine wizard to create the VM.
+2. Select the new VM and click **Power on this virtual machine**.
+3. If you used VMware’s Easy Install and provided user info, the installation will proceed automatically.
+   - Otherwise, the Ubuntu installer will boot from the ISO and you will go through the standard on-screen installation steps (language, keyboard, install type, user info, timezone, etc.).
+4. After the installer completes, choose **Restart Now** when prompted. If the VM still has the ISO mounted, make sure to eject it (VMware usually handles this).
+
+---
+
+## Quick summary & suggested defaults (for a typical lab VM)
+
+- ISO: Ubuntu Desktop LTS (`.iso`)
+- VM Name: `Ubuntu-Lab`
+- Disk: `20 GB`, **store as single file**, thin provision (do not pre-allocate)
+- RAM: `4096 MB` (if available) or minimum `2048 MB`
+- CPU: `1` or `2` cores
+- Network: `NAT`

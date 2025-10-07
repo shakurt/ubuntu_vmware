@@ -15,6 +15,13 @@ const config: MetaRecord = {
       copyPage: false,
     },
   },
+  "config-ubuntu": {
+    title: "Config Ubuntu ✅",
+    theme: {
+      breadcrumb: false,
+      copyPage: false,
+    },
+  },
 };
 
 export default config;
