@@ -4,18 +4,49 @@ import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import "nextra-theme-docs/style.css";
 
 export const metadata = {
-  title: "Nextra Documentation",
+  title: "Ubuntu VMware Installation",
+  description:
+    "A comprehensive guide to installing Ubuntu on VMware for educational purposes.",
+  keywords: [
+    "Ubuntu",
+    "VMware",
+    "virtual machine",
+    "installation",
+    "Linux",
+    "operating systems",
+    "virtualization",
+    "tutorial",
+    "guide",
+  ],
+  authors: [{ name: "ThePrimeShak" }],
+  openGraph: {
+    title: "Ubuntu VMware Installation Guide",
+    description:
+      "A comprehensive guide to installing Ubuntu on VMware for educational purposes.",
+    type: "website",
+    siteName: "Ubuntu Installation Docs",
+  },
+  robots: "index, follow",
 };
 
-const banner = <Banner storageKey="some-new">Nextra 4.0 is released 🎉</Banner>;
+const banner = (
+  <Banner storageKey="welcome-banner">
+    Welcome to the Ubuntu Installation Docs! 🧩
+  </Banner>
+);
 const navbar = (
   <Navbar
     logo={<b>ThePrimeShak</b>}
-    projectLink="https://github.com/shakurt"
+    projectLink="https://github.com/shakurt/ubuntu_vmware"
     chatLink="https://discordapp.com/users/605522203580301312"
   />
 );
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+const footer = (
+  <Footer>
+    © {new Date().getFullYear()} Ubuntu Installation Guide — Created by Shak
+    for the Operating Systems Lab course.
+  </Footer>
+);
 
 const search = (
   <Search placeholder="Search docs..." emptyResult="No Result Found." />
@@ -28,11 +59,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <Head
-      // ... Your additional head options
-      >
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
-      </Head>
+      <Head></Head>
       <body>
         <Layout
           banner={banner}
@@ -43,7 +70,11 @@ export default async function RootLayout({
           search={search}
           editLink={null}
           feedback={{ content: null }}
-          toc={{ extraContent: null }}
+          toc={{
+            extraContent: null,
+            backToTop: true,
+            title: "Available sections on this page:",
+          }}
           copyPageButton={false}
         >
           {children}

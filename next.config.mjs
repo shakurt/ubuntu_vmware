@@ -9,8 +9,8 @@ export default withNextra({
     return [
       {
         source: "/",
-        destination: "/docs",
-        permanent: false,
+        destination: "/intro",
+        permanent: true,
       },
     ];
   },
