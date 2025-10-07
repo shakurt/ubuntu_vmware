@@ -17,16 +17,16 @@ const config: MetaRecord = {
     },
   },
 
-  "why-ubuntu": {
-    title: "Why Ubuntu? 🤔",
+  "virtual-machine": {
+    title: "Virtual Machine 💽",
     theme: {
       breadcrumb: false,
       copyPage: false,
     },
   },
 
-  "virtual-machine": {
-    title: "Virtual Machine 💽",
+  ubuntu: {
+    title: "Ubuntu 🐧",
     theme: {
       breadcrumb: false,
       copyPage: false,
