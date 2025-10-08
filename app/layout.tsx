@@ -75,6 +75,9 @@ export default async function RootLayout({
             backToTop: true,
             title: "Available sections on this page:",
           }}
+          sidebar={{
+            defaultMenuCollapseLevel: 1,
+          }}
           copyPageButton={false}
         >
           {children}
