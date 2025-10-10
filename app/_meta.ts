@@ -33,6 +33,14 @@ const config: MetaRecord = {
     },
   },
 
+  debian: {
+    title: "Debian 🌀",
+    theme: {
+      breadcrumb: false,
+      copyPage: false,
+    },
+  },
+
   "basic-terminal-commands": {
     title: "Basic Terminal Commands ⌨️",
     theme: {
