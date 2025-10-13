@@ -41,8 +41,8 @@ const config: MetaRecord = {
     },
   },
 
-  "basic-terminal-commands": {
-    title: "Basic Terminal Commands ⌨️",
+  terminal: {
+    title: "Terminal ⌨️",
     theme: {
       breadcrumb: false,
       copyPage: false,
