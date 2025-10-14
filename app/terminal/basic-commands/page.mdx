@@ -1,0 +1,75 @@
+# ⌨️ Basic Terminal Commands
+
+## 🚀 Why learn terminal commands?
+
+The terminal (CLI) is a compact and powerful interface for controlling a Linux system.  
+Knowing a core set of commands lets you navigate the filesystem, inspect files, manage packages and services, debug problems, automate tasks, and work on remote machines — all efficiently and reproducibly.
+
+> ⚠️ **Safety note:** Many commands (especially those that use `sudo` or `rm`) can change or delete data. Always double-check a command before running it on important systems.
+
+---
+
+## 📚 How to use this page
+
+- The table below lists **50 essential commands** ordered from basic → intermediate → advanced.
+- Each row shows a **practical example** and a **short description**.
+- Examples assume a typical Debian/Ubuntu environment. Change paths or package names to match your context.
+
+> 🖼️ Suggested visual: `public/images/terminal-basic.png` — **alt:** "Terminal prompt with sample commands"
+
+---
+
+## 🔢 Command Reference (50 essentials)
+
+| #   | Command            | Example                                      | Description                                                                 |
+| --- | ------------------ | -------------------------------------------- | --------------------------------------------------------------------------- |
+| 1   | `pwd`              | `pwd`                                        | Print working directory — shows your current folder path.                   |
+| 2   | `ls`               | `ls -la /home/student`                       | List files and directories; `-la` shows hidden files and details.           |
+| 3   | `cd`               | `cd /home/student/Documents`                 | Change current directory.                                                   |
+| 4   | `mkdir`            | `mkdir projects`                             | Create a new directory named `projects`.                                    |
+| 5   | `rmdir`            | `rmdir empty-folder`                         | Remove an empty directory.                                                  |
+| 6   | `touch`            | `touch todo.txt`                             | Create an empty file or update the file timestamp.                          |
+| 7   | `cp`               | `cp file.txt /tmp/`                          | Copy a file to another location.                                            |
+| 8   | `mv`               | `mv oldname.txt newname.txt`                 | Move or rename a file or directory.                                         |
+| 9   | `rm`               | `rm file.txt`                                | Remove a file. **(Be careful — irreversible)**                              |
+| 10  | `cat`              | `cat /etc/hosts`                             | Concatenate and print file content to the terminal.                         |
+| 11  | `less`             | `less /var/log/syslog`                       | View a file page-by-page (use `q` to quit).                                 |
+| 12  | `head`             | `head -n 20 /var/log/syslog`                 | Show the first N lines of a file.                                           |
+| 13  | `tail`             | `tail -n 50 /var/log/syslog`                 | Show the last N lines of a file (`-f` to follow).                           |
+| 14  | `echo`             | `echo "Hello world" > hello.txt`             | Print text or redirect text into a file.                                    |
+| 15  | `grep`             | `grep -i "error" /var/log/syslog`            | Search for patterns in files; `-i` ignores case.                            |
+| 16  | `find`             | `find . -name "*.py"`                        | Find files matching a pattern (search recursively).                         |
+| 17  | `locate`           | `locate passwd`                              | Fast file lookup using an index (run `sudo updatedb` first).                |
+| 18  | `nano`             | `nano todo.txt`                              | Simple terminal text editor (beginner friendly).                            |
+| 19  | `vi`               | `vi todo.txt`                                | Powerful modal text editor (ubiquitous on Unix systems).                    |
+| 20  | `chmod`            | `chmod 644 file.txt`                         | Change file permissions (owner/group/others).                               |
+| 21  | `chown`            | `sudo chown user:group file.txt`             | Change file owner and group.                                                |
+| 22  | `sudo`             | `sudo apt update`                            | Run a command with superuser (root) privileges.                             |
+| 23  | `whoami`           | `whoami`                                     | Show the current logged-in username.                                        |
+| 24  | `id`               | `id student`                                 | Show user and group IDs for a user.                                         |
+| 25  | `passwd`           | `passwd`                                     | Change your user password (interactive).                                    |
+| 26  | `sudo apt update`  | `sudo apt update`                            | Refresh APT package lists (Debian/Ubuntu).                                  |
+| 27  | `sudo apt upgrade` | `sudo apt upgrade -y`                        | Upgrade installed packages (use `-y` to auto-confirm).                      |
+| 28  | `sudo apt install` | `sudo apt install git`                       | Install packages from repositories.                                         |
+| 29  | `dpkg -i`          | `sudo dpkg -i package.deb`                   | Install a local `.deb` package file.                                        |
+| 30  | `systemctl status` | `systemctl status ssh`                       | Show service status (systemd services).                                     |
+| 31  | `systemctl start`  | `sudo systemctl start ssh`                   | Start a systemd service.                                                    |
+| 32  | `systemctl stop`   | `sudo systemctl stop ssh`                    | Stop a systemd service.                                                     |
+| 33  | `journalctl -xe`   | `sudo journalctl -xe`                        | Show systemd journal logs for debugging.                                    |
+| 34  | `ps`               | `ps aux \| grep nginx`                       | List running processes (`aux` shows all with details).                      |
+| 35  | `top`              | `top`                                        | Interactive process viewer; press `q` to quit.                              |
+| 36  | `pstree`           | `pstree -p`                                  | Display processes as a tree (shows parent/child).                           |
+| 37  | `kill`             | `kill 12345`                                 | Send SIGTERM to a process PID (use `-9` for SIGKILL).                       |
+| 38  | `pkill`            | `pkill -f myscript.py`                       | Kill processes by name or pattern.                                          |
+| 39  | `killall`          | `sudo killall mysqld`                        | Kill all processes with the given name.                                     |
+| 40  | `crontab -e`       | `crontab -e`                                 | Edit the current user’s cron jobs (scheduled tasks).                        |
+| 41  | `ssh`              | `ssh student@192.168.1.10`                   | Securely connect to a remote machine via SSH.                               |
+| 42  | `scp`              | `scp file.txt student@remote:/home/student/` | Copy files between machines over SSH.                                       |
+| 43  | `rsync`            | `rsync -avz src/ user@remote:/dest/`         | Fast, incremental file copy/sync (local or remote).                         |
+| 44  | `curl`             | `curl -I https://example.com`                | Transfer data from URLs; `-I` fetches headers.                              |
+| 45  | `wget`             | `wget https://example.com/file.iso`          | Simple non-interactive file download tool.                                  |
+| 46  | `ping`             | `ping -c 4 8.8.8.8`                          | Test network connectivity (count `-c` packets).                             |
+| 47  | `traceroute`       | `traceroute example.com`                     | Trace path packets take to a remote host (may require `sudo`).              |
+| 48  | `ss`               | `ss -tulwn`                                  | Show listening sockets and network connections (replacement for `netstat`). |
+| 49  | `df`               | `df -h`                                      | Show disk filesystem usage in human-readable format.                        |
+| 50  | `du`               | `du -sh /home/student/projects`              | Show disk usage of a folder (summary, human-readable).                      |

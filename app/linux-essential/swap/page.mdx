@@ -1,0 +1,76 @@
+# 💾 Swap in Linux
+
+**Swap** is a dedicated space on your storage device (disk or SSD) that Linux uses as **virtual memory** when the physical RAM is full.  
+It acts as an overflow area to ensure that the system continues to function when memory usage is high.
+
+---
+
+## 🧠 Why Swap Exists
+
+- RAM is limited. When running multiple applications, the system may run out of memory.
+- Swap provides extra space so Linux can temporarily move inactive memory pages from RAM to disk.
+- This prevents **system crashes or slowdowns** due to memory exhaustion.
+
+---
+
+## 📂 Types of Swap
+
+1. **Swap Partition**
+   - A dedicated disk partition for swap.
+   - Usually created during Linux installation.
+
+2. **Swap File**
+   - A regular file within the filesystem used as swap space.
+   - Can be added or resized without repartitioning the disk.
+
+> 💡 Modern Linux systems can use either method. Swap files are flexible; swap partitions are traditional.
+
+---
+
+## ⚡ How Swap Works
+
+- When RAM fills up, Linux moves inactive pages to swap.
+- Active processes stay in RAM for fast access.
+- Swap is slower than RAM, so relying on it heavily may reduce performance.
+
+> Think of swap as a **backup workspace for memory**.
+
+---
+
+## 📝 Best Practices
+
+- **Size recommendations**:
+  - 1–2× RAM if RAM < 4 GB
+  - Equal or slightly less than RAM if RAM ≥ 4 GB
+  - Adjust according to workload (e.g., heavy compilation, virtualization)
+- **Enable hibernation**: Swap must be at least as large as RAM.
+- **Monitor swap usage**: Use `free -h` or `swapon --show` to check usage.
+- Avoid putting swap on slow disks if performance matters.
+
+---
+
+## 🖥️ Useful Commands
+
+| Command                          | Description                           | Example                                                       |
+| -------------------------------- | ------------------------------------- | ------------------------------------------------------------- |
+| `swapon --show`                  | Show active swap                      | `swapon --show`                                               |
+| `free -h`                        | Display memory and swap usage         | `free -h`                                                     |
+| `sudo mkswap /dev/sda4`          | Format a partition as swap            | `sudo mkswap /dev/sda4`                                       |
+| `sudo swapon /dev/sda4`          | Enable swap on a partition            | `sudo swapon /dev/sda4`                                       |
+| `sudo swapoff /dev/sda4`         | Disable swap temporarily              | `sudo swapoff /dev/sda4`                                      |
+| `sudo fallocate -l 2G /swapfile` | Create a swap file                    | `sudo fallocate -l 2G /swapfile`                              |
+| `sudo chmod 600 /swapfile`       | Set correct permissions for swap file | `sudo chmod 600 /swapfile`                                    |
+| `sudo mkswap /swapfile`          | Format swap file                      | `sudo mkswap /swapfile`                                       |
+| `sudo swapon /swapfile`          | Activate swap file                    | `sudo swapon /swapfile`                                       |
+| `sudo nano /etc/fstab`           | Add swap entry to fstab               | `echo '/swapfile none swap sw 0 0' \| sudo tee -a /etc/fstab` |
+
+---
+
+## 🔐 Summary
+
+- Swap is **virtual memory** used when RAM is full.
+- Can be a **partition** or a **file**.
+- Helps **prevent crashes** and maintain system stability.
+- Proper sizing and monitoring ensure **efficient system performance**.
+
+> 🚀 Understanding swap is crucial for Linux administration, virtualization, and handling memory-intensive tasks.

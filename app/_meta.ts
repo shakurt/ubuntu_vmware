@@ -10,7 +10,7 @@ const config: MetaRecord = {
   },
 
   "linux-basic": {
-    title: "Linux Basics 🐧",
+    title: "Linux Basics 📚",
     theme: {
       breadcrumb: false,
       copyPage: false,
@@ -18,7 +18,7 @@ const config: MetaRecord = {
   },
 
   "virtual-machine": {
-    title: "Virtual Machine 💽",
+    title: "Virtual Machine 💻",
     theme: {
       breadcrumb: false,
       copyPage: false,
@@ -26,7 +26,7 @@ const config: MetaRecord = {
   },
 
   ubuntu: {
-    title: "Ubuntu 🐧",
+    title: "Ubuntu 🟠",
     theme: {
       breadcrumb: false,
       copyPage: false,
@@ -41,8 +41,16 @@ const config: MetaRecord = {
     },
   },
 
-  "basic-terminal-commands": {
-    title: "Basic Terminal Commands ⌨️",
+  terminal: {
+    title: "Terminal 💻",
+    theme: {
+      breadcrumb: false,
+      copyPage: false,
+    },
+  },
+
+  "linux-essential": {
+    title: "Linux Essentials ⚙️",
     theme: {
       breadcrumb: false,
       copyPage: false,

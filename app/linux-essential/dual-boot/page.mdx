@@ -1,0 +1,65 @@
+# 🔀 Dual-Boot in Linux
+
+**Dual-Boot** refers to a setup where two operating systems are installed on the same computer, allowing you to choose which one to boot into at startup.  
+For example, you can run **Windows** and **Linux** on the same machine, selecting the OS each time you power on the system.
+
+---
+
+## 🖥️ Why Dual-Boot?
+
+- ✅ **Access to both OS features**: Some applications or games run only on Windows, while Linux provides better development and server tools.
+- 💾 **Resource efficiency**: Each OS uses the hardware directly, unlike virtual machines.
+- 🎓 **Learning and experimentation**: Ideal for students or developers who want hands-on experience with multiple OS environments.
+
+---
+
+## ⚠️ Important Considerations
+
+1. **Backup your data**: Installing a second OS can overwrite partitions and cause data loss.
+2. **Partition planning**: Each OS needs its own partition(s).
+3. **Bootloader awareness**: Linux typically uses GRUB as the bootloader; improper installation can break Windows boot.
+4. **Disk space**: Allocate enough space for both systems. For Linux, at least 20–30 GB is recommended.
+
+> 💡 Dual-boot setups are powerful but require careful preparation.
+
+---
+
+## 🧩 Partitioning Basics
+
+- **Primary Partition**: Required for booting Windows and Linux.
+- **Swap Partition** (Linux only): Acts as virtual memory if RAM is full.
+- **Root Partition (`/`)**: Where Linux is installed.
+- **Home Partition (`/home`)**: Optional, stores user data.
+
+### Example Layout
+
+| Partition   | Size   | File System | Purpose                  |
+| ----------- | ------ | ----------- | ------------------------ |
+| `/dev/sda1` | 100 MB | NTFS        | Windows EFI/Boot         |
+| `/dev/sda2` | 100 GB | NTFS        | Windows System           |
+| `/dev/sda3` | 30 GB  | ext4        | Linux `/` root           |
+| `/dev/sda4` | 2–4 GB | swap        | Linux swap               |
+| `/dev/sda5` | 50 GB  | ext4        | Linux `/home` (optional) |
+
+> ⚡ This is a common layout; exact sizes depend on your disk and needs.
+
+---
+
+## 🔐 Best Practices for Dual-Boot
+
+- Always **backup Windows** before starting.
+- Install **Windows first**, then Linux (Linux bootloader can detect Windows).
+- Use **manual partitioning** during Linux installation to avoid overwriting Windows.
+- Avoid using Windows fast startup (disable hibernation) to prevent filesystem corruption.
+- Test the bootloader after installation to ensure both OS options appear.
+
+---
+
+## 📝 Summary
+
+- Dual-Boot lets you run **two OSes on one machine**.
+- Proper **partitioning, backups, and bootloader management** are critical.
+- Ideal for learning, development, and accessing OS-specific software.
+- For lab exercises, always follow **careful, step-by-step installation procedures**.
+
+> 🚀 Dual-Boot is a bridge between Windows and Linux. Mastering its setup helps you confidently manage multi-OS environments.

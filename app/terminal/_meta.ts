@@ -1,22 +1,15 @@
 import type { MetaRecord } from "nextra";
 
 const config: MetaRecord = {
-  "why-ubuntu": {
-    title: "Why Ubuntu? ❓",
+  "what-is-terminal": {
+    title: "What is Terminal? ❓",
     theme: {
       breadcrumb: false,
       copyPage: false,
     },
   },
-  installation: {
-    title: "Installation 📦",
-    theme: {
-      breadcrumb: false,
-      copyPage: false,
-    },
-  },
-  "config-ubuntu": {
-    title: "Config Ubuntu ⚙️",
+  "basic-commands": {
+    title: "Basic Terminal Commands ⌨️",
     theme: {
       breadcrumb: false,
       copyPage: false,
